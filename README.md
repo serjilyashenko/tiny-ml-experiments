@@ -5,7 +5,7 @@ The projects are intentionally simple and educational.
 
 ## Projects
 
-- 
+- [TensorFlow Text Classification Demo](./tf-txt-classification-demo) - A tiny demo of text toxicity classification using TensorFlow.js
 - [VanillaJS Binary Neural Network](./binary-js-nn) — a 2-layer VanillaJS neural network that learns XOR (AND, OR) using backpropagation.
 
 More projects coming soon 🚀

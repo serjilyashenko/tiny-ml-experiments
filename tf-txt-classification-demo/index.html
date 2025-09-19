@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Mini ML Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity"></script>
+</head>
+<body style="font-family: sans-serif; padding: 20px">
+<h2>Mini ML Demo: Text Classification</h2>
+<textarea
+        id="text"
+        rows="4"
+        cols="50"
+        placeholder="Type something..."
+></textarea
+><br/><br/>
+<button id="btn">Analyze</button>
+<p id="result"></p>
+
+<script>
+  async function run() {
+    const model = await toxicity.load(0.7); // threshold 70%
+    document.getElementById("btn").addEventListener('click', async () => {
+      const text = document.getElementById("text").value;
+
+      const predictions = await model.classify([text]);
+      const toxic = predictions.some(
+        (p) => p.results[0].match === true,
+      );
+      document.getElementById("result").innerText = toxic
+        ? "⚠️ Text looks toxic"
+        : "✅ Text seems fine";
+    });
+  }
+
+  run();
+</script>
+</body>
+</html>
