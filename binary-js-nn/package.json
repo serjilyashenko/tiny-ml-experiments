@@ -1,0 +1,27 @@
+{
+  "name": "binary-js-nn",
+  "version": "1.0.0",
+  "description": "This is a tiny neural network implemented from scratch in Vanilla JavaScript that learns the XOR function. It can be trained to calculate AND or OR operations as well.",
+  "main": "index.test.js",
+  "scripts": {
+    "start": "vitest"
+  },
+  "repository": {
+    "url": "https://github.com/serjilyashenko/tiny-ml-experiments.git"
+  },
+  "keywords": [
+    "ml",
+    "ai",
+    "nn",
+    "education"
+  ],
+  "author": "serj.ilyashenko@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serjilyashenko/tiny-ml-experiments/issues"
+  },
+  "homepage": "https://github.com/serjilyashenko/tiny-ml-experiments#readme",
+  "dependencies": {
+    "vitest": "3.2.4"
+  }
+}
