@@ -27,5 +27,39 @@ Training data set:
 
 Test data: `[1, 0, 0] → 1`
 
+## Backpropagation Formulas
+
+loss function
+
+$E = \frac{1}{2}(\hat{y} - y)^2$
+
+activation function
+
+$y = \sigma(z)$
+
+linear regression
+
+$z(\omega_1, \omega_2, \omega_3): \quad z = \omega_1 x_1 + \omega_2 x_2 + \omega_3 x_3$
+
+gradient descent
+
+$\omega_{01}' = \omega_{01} + \eta \frac{dE}{d\omega_{01}}$
+
+$\frac{dE}{d\omega_1} = \frac{dE}{dy} \cdot \frac{dy}{dz} \cdot \frac{dz}{d\omega_1}$
+
+$(\hat{y} - y) \cdot y(1 - y) \cdot x_1$
+
+weight adjustments
+
+$\omega_1' = \omega_1 + \eta \cdot (\hat{y} - y) \cdot y(1 - y) \cdot x_1$
+
+$\omega_2' = \omega_2 + \eta \cdot (\hat{y} - y) \cdot y(1 - y) \cdot x_2$
+
+$\omega_3' = \omega_3 + \eta \cdot (\hat{y} - y) \cdot y(1 - y) \cdot x_3$
+
+general form
+
+$\omega_i' = \omega_i + \eta \cdot (\hat{y} - y) \cdot y(1 - y) \cdot x_i \quad i \in \{1, 2, 3\}$
+
 ## Notes
 * Purely for educational purposes.
