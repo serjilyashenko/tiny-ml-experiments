@@ -26,3 +26,6 @@ Training data set:
 ```
 
 Test data: `[1, 0, 0] → 1`
+
+## Notes
+* Purely for educational purposes.

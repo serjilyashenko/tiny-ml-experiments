@@ -6,45 +6,64 @@ function dsigmoid(y) {
   return y * (1 - y);
 }
 
+function sigmoidGradient(z) {
+  return sigmoid(z) * (1 - sigmoid(z));
+}
+
 export class TinyBinaryNN {
   constructor() {
-    this.w11 = Math.random() * 2 - 1;
-    this.w12 = Math.random() * 2 - 1;
-    this.w21 = Math.random() * 2 - 1;
-    this.w22 = Math.random() * 2 - 1;
-    this.wo1 = Math.random() * 2 - 1;
-    this.wo2 = Math.random() * 2 - 1;
+    this.w11 = Math.random();
+    this.w12 = Math.random();
+    this.w21 = Math.random();
+    this.w22 = Math.random();
+    this.wo1 = Math.random();
+    this.wo2 = Math.random();
+  }
 
-    this.b1 = Math.random() * 2 - 1;
-    this.b2 = Math.random() * 2 - 1;
-    this.bo = Math.random() * 2 - 1;
+  calculateZ1(x1, x2) {
+    return x1 * this.w11 + x2 * this.w12;
+  }
+
+  calculateZ2(x1, x2) {
+    return x1 * this.w21 + x2 * this.w22;
+  }
+
+  calculateZo(h1, h2) {
+    return h1 * this.wo1 + h2 * this.wo2;
   }
 
   calculate(x1, x2) {
-    const h1 = sigmoid(x1 * this.w11 + x2 * this.w12 + this.b1);
-    const h2 = sigmoid(x1 * this.w21 + x2 * this.w22 + this.b2);
-    const out = sigmoid(h1 * this.wo1 + h2 * this.wo2 + this.bo);
+    const z1 = this.calculateZ1(x1, x2);
+    const z2 = this.calculateZ2(x1, x2);
+    const h1 = sigmoid(z1);
+    const h2 = sigmoid(z2);
+    const zo = this.calculateZo(h1, h2);
+    const out = sigmoid(zo);
 
-    return {h1, h2, out};
+    return out;
   }
 
   learn(x1, x2, target) {
-    const {h1, h2, out} = this.calculate(x1, x2);
+    const lr = 1; // learningRate
+    const z1 = this.calculateZ1(x1, x2);
+    const z2 = this.calculateZ2(x1, x2);
+    const h1 = sigmoid(z1);
+    const h2 = sigmoid(z2);
+    const zo = this.calculateZo(h1, h2);
+    const out = sigmoid(zo);
     const error = target - out;
-    const d_out = dsigmoid(out) * error;
 
-    const d_h1 = d_out * this.wo1 * dsigmoid(h1);
-    const d_h2 = d_out * this.wo2 * dsigmoid(h2);
+    this.wo1 += lr * error * h1 * sigmoidGradient(zo);
+    this.wo2 += lr * error * h2 * sigmoidGradient(zo);
 
-    this.w11 += x1 * d_h1;
-    this.w12 += x2 * d_h1;
-    this.w21 += x1 * d_h2;
-    this.w22 += x2 * d_h2;
-    this.b1 += d_h1;
-    this.b2 += d_h2;
+    const temp1 =
+      lr * error * sigmoidGradient(zo) * this.wo1 * sigmoidGradient(z1); // or lr * error * dsigmoid(out) * this.wo1 * dsigmoid(h1)
+    this.w11 += temp1 * x1;
+    this.w12 += temp1 * x2;
 
-    this.wo1 += h1 * d_out;
-    this.wo2 += h2 * d_out;
-    this.bo += d_out;
+    const temp2 =
+      lr * error * sigmoidGradient(zo) * this.wo2 * sigmoidGradient(z2); // or lr * error * dsigmoid(out) * this.wo2 * dsigmoid(h2)
+    this.w21 += temp2 * x1;
+    this.w22 += temp2 * x2;
   }
 }

@@ -11,14 +11,11 @@ It has:
 
 ## Run it
 
-From `xor-js-nn` folder run:
+From `binary-js-nn` folder run:
 
 ```bash
-npm install
-npm start
+node ./index.test.js 
 ```
 
 ## Notes
-* This is not an efficient implementation.
-* No learning rate is used — weight updates are direct gradients.
 * Purely for educational purposes.
