@@ -26,7 +26,7 @@ const data = xorDataSet
 
 const nn = new TinyBinaryNN();
 
-for (let i = 0; i < 100_000; i++) {
+for (let i = 0; i < 300_000; i++) {
   const [x1, x2, y] = data[Math.floor(Math.random() * data.length)];
   nn.learn(x1, x2, y);
 }
@@ -40,7 +40,7 @@ console.log('>>> weights', JSON.stringify({
   wo2: nn.wo2,
 }, null, 2));
 
-console.log('[0, 0, 0] -> 0', nn.calculate(0, 0));
-console.log('[0, 1, 1] -> 1', nn.calculate(0, 1));
-console.log('[1, 0, 1] -> 1', nn.calculate(1, 0));
-console.log('[1, 1, 0] -> 0', nn.calculate(1, 1));
+console.log('[0, 0, 0] ->', nn.calculate(0, 0));
+console.log('[0, 1, 1] ->', nn.calculate(0, 1));
+console.log('[1, 0, 1] ->', nn.calculate(1, 0));
+console.log('[1, 1, 0] ->', nn.calculate(1, 1));
