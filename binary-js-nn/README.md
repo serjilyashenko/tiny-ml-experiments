@@ -35,9 +35,9 @@ $= (\hat{y} - y) \cdot y(1 - y) \cdot h_1$
 
 weight adjustments
 
-$\omega_{01}' = \omega_{01} + \eta \, (\hat{y} - y) \, y(1 - y) \, h_1$
+$\omega_{01}' = \omega_{01} + \eta \cdot (\hat{y} - y) \cdot y(1 - y) \cdot h_1$
 
-$\omega_{02}' = \omega_{02} + \eta \, (\hat{y} - y) \, y(1 - y) \, h_2$
+$\omega_{02}' = \omega_{02} + \eta \cdot (\hat{y} - y) \cdot y(1 - y) \cdot h_2$
 
 ### Hidden neuron
 
@@ -57,13 +57,13 @@ $\frac{dE}{d\omega_{11}} = (\hat{y} - y) \cdot y(1-y) \cdot \omega_{01} \cdot h_
 
 weight adjustments
 
-$\omega_{11}' = \omega_{11} + \eta \, (\hat{y} - y) \, y(1-y) \, \omega_{01} \, h_1(1-h_1) \, x_1$
+$\omega_{11}' = \omega_{11} + \eta \cdot (\hat{y} - y) \cdot y(1-y) \cdot \omega_{01} \cdot h_1(1-h_1) \cdot x_1$
 
-$\omega_{12}' = \omega_{12} + \eta \, (\hat{y} - y) \, y(1-y) \, \omega_{01} \, h_1(1-h_1) \, x_2$
+$\omega_{12}' = \omega_{12} + \eta \cdot (\hat{y} - y) \cdot y(1-y) \cdot \omega_{01} \cdot h_1(1-h_1) \cdot x_2$
 
-$\omega_{21}' = \omega_{21} + \eta \, (\hat{y} - y) \, y(1-y) \, \omega_{02} \, h_2(1-h_2) \, x_1$
+$\omega_{21}' = \omega_{21} + \eta \cdot (\hat{y} - y) \cdot y(1-y) \cdot \omega_{02} \cdot h_2(1-h_2) \cdot x_1$
 
-$\omega_{22}' = \omega_{22} + \eta \, (\hat{y} - y) \, y(1-y) \, \omega_{02} \, h_2(1-h_2) \, x_2$
+$\omega_{22}' = \omega_{22} + \eta \cdot (\hat{y} - y) \cdot y(1-y) \cdot \omega_{02} \cdot h_2(1-h_2) \cdot x_2$
 
 ## Run it
 
