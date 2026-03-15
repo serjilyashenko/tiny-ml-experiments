@@ -33,7 +33,6 @@ export class TinyBinaryNN {
     const error = target - out;
     const d_out = dsigmoid(out) * error;
 
-    // ошибка для скрытого слоя
     const d_h1 = d_out * this.wo1 * dsigmoid(h1);
     const d_h2 = d_out * this.wo2 * dsigmoid(h2);
 
