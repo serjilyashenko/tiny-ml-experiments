@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/serjilyashenko/tiny-ml-experiments#readme",
   "dependencies": {
-    "vitest": "3.2.4"
+    "vitest": "4.1.0"
   }
 }
