@@ -1,2 +1,5 @@
+from . import app
+
+
 def main() -> None:
-    print("Hello from rag-coursera-duke!")
+    app.run()
