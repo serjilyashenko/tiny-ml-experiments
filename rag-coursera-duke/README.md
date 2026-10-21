@@ -4,8 +4,14 @@ A rag system implemented while following the Coursera course [*Introduction to R
 
 ## Setup
 
+You’ll need [uv](https://docs.astral.sh/uv/) installed.
+
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-.venv/bin/pip install -r requirements.txt
+uv sync
+```
+
+## Run
+
+```bash
+uv run rag-coursera-duke
 ```
