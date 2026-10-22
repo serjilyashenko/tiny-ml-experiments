@@ -20,7 +20,8 @@ dependencies = [
 ]
 
 [project.scripts]
-rag-coursera-duke = "rag_coursera_duke:main"
+prepare-models = "rag_coursera_duke.prepare_models:main"
+app = "rag_coursera_duke:main"
 
 [build-system]
 requires = ["uv_build>=0.13.4,<0.14.0"]

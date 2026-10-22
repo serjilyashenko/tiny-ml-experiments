@@ -8,10 +8,11 @@ You’ll need [uv](https://docs.astral.sh/uv/) installed.
 
 ```bash
 uv sync
+uv run prepare-models
 ```
 
 ## Run
 
 ```bash
-uv run rag-coursera-duke
+uv run app
 ```

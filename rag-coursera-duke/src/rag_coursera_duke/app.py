@@ -2,12 +2,13 @@ from .documents import load_documents
 from .embedder import Embedder
 
 def run() -> None:
+    embedder = Embedder()
+
     # documents = load_documents()
     documents = load_documents(count=10)
 
     print(documents)
 
-    embedder = Embedder()
     vector = embedder.embed("A fruity red wine")
     print(vector)
 
