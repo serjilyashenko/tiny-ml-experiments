@@ -1,4 +1,4 @@
-from typing import Protocol, Any
+from typing import Protocol, Literal, Any
 from dataclasses import dataclass
 
 
@@ -19,3 +19,8 @@ class StoreProtocol(Protocol):
     def upload(self, documents: list[dict[str, Any]], vector_filed: str) -> None: ...
     def search(self, query: str, limit: int = 3) -> list[StoreSearchResult]: ...
     def close(self) -> None: ...
+
+@dataclass(frozen=True)
+class Message:
+    role: Literal["system", "user", "assistant"]
+    content: str
