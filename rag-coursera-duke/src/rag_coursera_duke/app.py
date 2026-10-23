@@ -1,21 +1,18 @@
-from .documents import load_documents
+from .protocols import EmbedderProtocol, StoreProtocol
 from .embedder import Embedder
+from .documents import load_documents
 from .vector_db import Store
 
 def run() -> None:
-    embedder = Embedder()
-    store = Store(embedder=embedder)
+    embedder: EmbedderProtocol = Embedder()
+    store: StoreProtocol = Store(embedder=embedder)
 
     # documents = load_documents()
-    documents = load_documents(count=10)
+    documents = load_documents(count=700)
 
-    print(documents)
+    store.upload(documents, 'notes')
 
-    vector = embedder.embed("A fruity red wine")
-    print(vector)
-
-    print(store.getTest())
-
+    print(store.search("A wine from Mendoza Argentina"))
 
     # q = input("You: ").strip()
     # print(q)

@@ -18,5 +18,5 @@ class Embedder:
     def dimension(self) -> int:
         return self.embedder.get_sentence_embedding_dimension()
 
-    def embed(self, text: str):
+    def embed(self, text: str) -> list[float]:
         return self.embedder.encode(text).tolist()
