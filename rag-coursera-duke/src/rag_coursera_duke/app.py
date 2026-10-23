@@ -11,9 +11,11 @@ def run() -> None:
         # documents = load_documents()
         documents = load_documents(count=700)
 
+        user_prompt = "A bold red wine with blackberry, dark chocolate, vanilla and a long finish"
+
         store.upload(documents=documents, vector_filed="notes")
-        results = store.search("A concentrated wine")
-        print(results)
+        search_results = store.search(user_prompt)
+        print(search_results)
     finally:
         store.close()
 
