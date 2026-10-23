@@ -7,10 +7,10 @@ def run() -> None:
     embedder: EmbedderProtocol = Embedder()
     store: StoreProtocol = Store(embedder=embedder)
 
-    # documents = load_documents()
-    documents = load_documents(count=700)
-
     try:
+        # documents = load_documents()
+        documents = load_documents(count=700)
+
         store.upload(documents=documents, vector_filed="notes")
         results = store.search("A concentrated wine")
         print(results)
