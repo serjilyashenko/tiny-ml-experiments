@@ -12,11 +12,11 @@ class Embedder:
                 f"Model files are missing in {MODEL_PATH}. "
                 "Run 'uv run prepare-models'."
             )
-        self.encoder = SentenceTransformer(str(MODEL_PATH))
+        self.embedder = SentenceTransformer(str(MODEL_PATH))
 
     @property
     def dimension(self) -> int:
-        return self.encoder.get_sentence_embedding_dimension()
+        return self.embedder.get_sentence_embedding_dimension()
 
     def embed(self, text: str):
-        return self.encoder.encode(text).tolist()
+        return self.embedder.encode(text).tolist()
