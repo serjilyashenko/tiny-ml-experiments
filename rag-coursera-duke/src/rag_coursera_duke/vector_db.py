@@ -27,6 +27,7 @@ class Store:
             collection_name="top_wines",
             points=points,
         )
+        print(f">> Uploaded {len(points)} points")
 
     def search(self, query: str, limit: int = 3) -> list[StoreSearchResult]:
         hits = self.client.search(
@@ -42,3 +43,6 @@ class Store:
             )
             for hit in hits
         ]
+
+    def close(self) -> None:
+        self.client.close()

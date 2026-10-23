@@ -10,9 +10,12 @@ def run() -> None:
     # documents = load_documents()
     documents = load_documents(count=700)
 
-    store.upload(documents, 'notes')
-
-    print(store.search("A wine from Mendoza Argentina"))
+    try:
+        store.upload(documents=documents, vector_filed="notes")
+        results = store.search("A concentrated wine")
+        print(results)
+    finally:
+        store.close()
 
     # q = input("You: ").strip()
     # print(q)
