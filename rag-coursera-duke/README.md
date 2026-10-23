@@ -13,17 +13,16 @@ uv sync
 uv run prepare-models
 ```
 
-### LLM
+### LLM API
 
 ```bash
-## download lamafile
-## https://huggingface.co/mozilla-ai/llamafile_0.10/resolve/main/Qwen3.5-0.8B-Q8_0.llamafile
-chmod +x Qwen3.5-0.8B-Q8_0.llamafile
-./Qwen3.5-0.8B-Q8_0.llamafile
+curl -L "https://huggingface.co/mozilla-ai/llamafile_0.10/resolve/main/Qwen3.5-0.8B-Q8_0.llamafile" -o ./models/Qwen3.5-0.8B-Q8_0.llamafile
+chmod +x ./models/Qwen3.5-0.8B-Q8_0.llamafile
+./models/Qwen3.5-0.8B-Q8_0.llamafile
 ```
-or follow instructions here
+or follow instructions [here](https://docs.mozilla.ai/llamafile/getting-started/quickstart)
 
-> Alternatively you can use an OpenAI API compatible key and endpoint
+> Alternatively you can use an OpenAI API compatible key and endpoint. You'll need to adjust endpoint and key in app.py file
 
 ## Run
 
