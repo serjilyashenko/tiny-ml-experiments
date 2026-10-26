@@ -29,8 +29,8 @@ def run() -> None:
     store: StoreProtocol = Store(embedder=embedder)
     llm = LLM()
 
-    # documents = load_documents()
-    documents = load_documents(count=700)
+    documents = load_documents()
+    # documents = load_documents(count=700)
     store.upload(documents=documents, vector_filed="notes")
 
     max_turns = 10
