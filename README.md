@@ -8,6 +8,6 @@ The projects are intentionally simple and educational.
 - [TensorFlow Text Classification Demo](./tf-txt-classification-demo) - A tiny demo of text toxicity classification using TensorFlow.js
 - [VanillaJS Binary Neural Network](./binary-js-nn) — a 2-layer VanillaJS neural network that learns XOR (AND, OR) using backpropagation.
 - [Neural Network in 77 Lines](./nn-in-77-lines) — A single-neuron network built from scratch in Python and JS.
-- [RAG introduction system](./rag-coursera-duke) — A retrieval-augmented generation system (Python, Qdrant, LLM API).
+- [RAG assistant](./rag-coursera-duke) — A retrieval-augmented generation (RAG) assistant (Python, Qdrant, LLM API).
 
 More projects coming soon 🚀
