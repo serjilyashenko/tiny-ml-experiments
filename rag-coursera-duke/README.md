@@ -1,4 +1,4 @@
-# RAG introduction system
+# RAG assistant
 
 A rag system implemented while following the Coursera course [*Introduction to Retrieval Augmented Generation (RAG)*](https://www.coursera.org/projects/introduction-to-rag).
 
