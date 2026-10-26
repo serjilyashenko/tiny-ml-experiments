@@ -100,5 +100,6 @@ def run() -> None:
     except KeyboardInterrupt:
         print("\nHave a nice day.")
 
-    llm.close()
-    store.close()
+    finally:
+        store.close()
+        llm.close()
