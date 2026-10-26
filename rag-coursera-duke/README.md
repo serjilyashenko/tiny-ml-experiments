@@ -18,7 +18,6 @@ uv run prepare-models
 ```bash
 curl -L "https://huggingface.co/mozilla-ai/llamafile_0.10/resolve/main/Qwen3.5-0.8B-Q8_0.llamafile" -o ./models/Qwen3.5-0.8B-Q8_0.llamafile
 chmod +x ./models/Qwen3.5-0.8B-Q8_0.llamafile
-./models/Qwen3.5-0.8B-Q8_0.llamafile
 ```
 or follow instructions [here](https://docs.mozilla.ai/llamafile/getting-started/quickstart)
 
@@ -27,5 +26,6 @@ or follow instructions [here](https://docs.mozilla.ai/llamafile/getting-started/
 ## Run
 
 ```bash
+./models/Qwen3.5-0.8B-Q8_0.llamafile
 uv run app
 ```
