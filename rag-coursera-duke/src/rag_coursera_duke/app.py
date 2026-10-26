@@ -38,8 +38,8 @@ def run() -> None:
 
     print(
         "Hi! I'm your wine assistant. "
-        "Tell me what kind of wine you're looking for."
-        "For example: A bold red wine with blackberry, dark chocolate, vanilla and a long finish"
+        "Tell me what kind of wine you're looking for.\n"
+        "For example: A bold red wine with blackberry, dark chocolate, vanilla and a long finish\n"
         "I'll help you find a match.\n"
         "Type 'exit' to quit or '/reset' to start a new conversation."
     )
