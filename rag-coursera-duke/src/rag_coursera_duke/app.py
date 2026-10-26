@@ -29,10 +29,11 @@ def run() -> None:
     store: StoreProtocol = Store(embedder=embedder)
     llm = LLM()
 
-    documents = load_documents()
+    # documents = load_documents()
     documents = load_documents(count=700)
     store.upload(documents=documents, vector_filed="notes")
 
+    max_turns = 10
     history: list[Message] = []
 
     print(
@@ -94,6 +95,7 @@ def run() -> None:
                 Message(role="user", content=user_prompt),
                 Message(role="assistant", content=response),
             ])
+            history = history[-max_turns * 2:]
 
     except KeyboardInterrupt:
         print("\nHave a nice day.")
